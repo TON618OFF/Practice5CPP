@@ -8,13 +8,13 @@ class BankAccount
 private:
     int accountNumber;
     double balance;
-    double interestRate;
+    double percentRate;
 
 public:
     BankAccount(int accountNumber, double initializeBalance) {
         this->accountNumber = accountNumber;
         this->balance = initializeBalance;
-        this->interestRate = 0;
+        this->percentRate = 0;
     };
 
     void deposit(double amount) {
@@ -43,12 +43,12 @@ public:
         return this->balance;
     };
 
-    double getInterest() {
-        return this->balance * this->interestRate * 1 / 12;
+    double getPercent() {
+        return this->balance * this->percentRate * 1 / 12;
     };
 
-    void setInterestRate(double newRate) {
-        this->interestRate = newRate;
+    void setPercentRate(double newRate) {
+        this->percentRate = newRate;
     };
 
     int getAccountNumber() {
@@ -76,8 +76,8 @@ int main() {
     account1.deposit(249.9);
     account2.withdraw(937.6);
 
-    account1.setInterestRate(0.05);
-    cout << "Проценты, полученные на счете 1: " << account1.getInterest() << endl;
+    account1.setPercentRate(0.05);
+    cout << "Проценты, полученные на счете 1: " << account1.getPercent() << endl;
 
     account1.transfer(account1, account2, 300.0);
 
