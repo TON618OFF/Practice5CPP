@@ -70,8 +70,21 @@ public:
 int main() {
     setlocale(LC_ALL, "ru");
 
-    BankAccount account1(001, 250);
-    BankAccount account2(002, 937.5);
+    int accountNumber1, accountNumber2;
+    double balance1, balance2;
+
+    cout << "Введите номер первого счета: ";
+    cin >> accountNumber1;
+    cout << "Введите баланс первого счета: ";
+    cin >> balance1;
+
+    cout << "Введите номер второго счета: ";
+    cin >> accountNumber2;
+    cout << "Введите баланс второго счета: ";
+    cin >> balance2;
+
+    BankAccount account1(accountNumber1, balance1);
+    BankAccount account2(accountNumber2, balance2);
 
     account1.deposit(249.9);
     account2.withdraw(937.6);
